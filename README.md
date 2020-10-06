@@ -1,4 +1,6 @@
-# 1st textbook: R for Data Science
+# textbook study for R, SQL, and Python
+
+1st textbook: R for Data Science
 
 - Explore
 01. Data visualisation
