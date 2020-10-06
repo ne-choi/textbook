@@ -1,6 +1,4 @@
-# textbook_study
-
-##1st textbook: R for Data Science
+# 1st textbook: R for Data Science
 
 - Explore
 01. Data visualisation
