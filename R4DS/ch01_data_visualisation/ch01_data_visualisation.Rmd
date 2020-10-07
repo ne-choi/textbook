@@ -7,16 +7,16 @@ output:
    toc: true
    toc_float:
      collapsed: false
-     smooth_scroll: false
+     smooth_scroll: true
    theme: united
-   highlight: tango
+   highlight: textmate
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Chapter 1. 데이터 시각화
+# 1장. 데이터 시각화
 > _"간단한 그래프는 데이터 분석가에게 다른 어떤 것보다도 많은 정보를 제공한다."_
 >
 > --- _존 튜키(John Tukey)_
