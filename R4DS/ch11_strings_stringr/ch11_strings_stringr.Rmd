@@ -540,127 +540,163 @@ tibble(sentence = sentences) %>%
 tidyr::extract (
  sentence, c("article", "noun"), "(a|the) ([^ ]+)", remove  = FALSE)
 ```
-str_extract()처럼, 각 문자열의 모든 매치를 원한다면 str_match_all()이필요하다.
+str_extract()처럼, 각 문자열의 모든 매치를 원한다면 str_match_all()이 필요함
 
 
 ### 4.6 연습문제
-1. 'one', 'two','three'등과 같은 '숫자' 다음에 오는 모든 단어를 구하라, 숫자와
-단어 모두를 추출하라.  
+1. 'one', 'two','three'등과 같은 '숫자' 다음에 오는 모든 단어를 구하라, 숫자와 단어 모두를 추출하라.  
 
 2. 줄임말은 모두 것이라. 아포스트로피(') 이전과 이후 조각을 분리하라.  
 
 
 ### 4.7 매칭 지환
 
-- str_replace()와 str_replaces_all()을 이용하여 매치를 새로운 문자열로 치환할
-수 있다.
-
+- str_replace()와 str_replaces_all(): 매치를 새로운 문자열로 치환할 수 있음  
+```{r}
 x <- c("apple", "pear", "banana")
 str_replace(x, "[aeiou]", "-")
 
 str_replace_all(x, "[aeiou]", "-")
+```  
 
--str_replace_all()을 사용하며 명명된 패터를 제공하여 다중 치환을 수행할 수 있다.
+- str_replace_all()을 사용하며 명명된 패터를 제공하여 다중 치환을 수행할 수 있음
+```{r}
+x <- c("1 house", "2 cars", "3 people")
+str_replace_all(x, c("1" = "one", "2" = "two", "3" ="three"))
+```  
 
-x <- C("1", "house", "2 cars", "3 people")
-str_replace_all(x, c("1" = "one", "2" = two, "3" =" three))
+- 고정된 문자열로 지환하는 대신, 매치의 구성요소를 삽입하기위해 역참조를 사용할 수 있음  
 
--고정된 문자열로 지환하는 대신, 매치의 구성요소를 삽입하기위해 역잠조를 
-사용할 수 있다.
--다음은 코드는 두 번째와 세 번째 단어의 순서를 바꾼다.
-
-sentece %>%
-    str_replace("[^ ]+) ([^ ]+) ([^ ]+)", "//1 //3 //2") %>%
+ex. 다음 코드는 두 번째와 세 번째 단어의 순서를 바꿈
+```{r}
+sentences %>%
+    str_replace("([^ ]+) ([^ ]+) ([^ ]+)", "\\1 \\3 \\2") %>%
     head(5)
+```
+
 
 ### 4.8 연습문제    
+1. 문자열의 모든 슬래시를 역슬래시로 치환하라.  
 
-1. 문자열의 모든 슬래시를 역슬래시로 지환하라.
+2. replace_all()을 사용하여 str_to_lower()의 간단한 버전을 구현하라.  
 
-2. replace_all()을 사용하여 str_to_lower()의 간단한 버전을 구헌하라.
-
-3.단어의 첫 번째와 마지막 문자를 바꿔라. 여전히 단어가 되는 문자열은 무엇인가?
+3.단어의 첫 번째와 마지막 문자를 바꿔라. 여전히 단어가 되는 문자열은 무엇인가?  
 
 
 ### 4.9 문자열 분할
-
-- 문자열 조각으로 분할하려면 str_split()을 사용하면 된다.
-- 예를 들어 문장을 단어로 분할할 수 있다.
-
+- 문자열 조각으로 분할하기: str_split()을 사용  
+ex. 문장을 단어로 분할할 수 있음
+```{r}
 sentences %>% 
   head(5) %>%
   str_split(" ")
+```
 
-- 각 구성요소가 포함하는 조각의 개수가 다를 수 있으므로, 이 함수는 리스트를 
-반환한다.
-
-"a/b/c/d" %>%
-  str_split ("///" %>%)
-  .[ [1] ]
+각 구성요소가 포함하는 조각의 개수가 다를 수 있으므로, 이 함수는 리스트를 반환
+```{r}
+"a|b|c|d" %>%
+  str_split ("\\|") %>%
+  .[[1]]
   #> [1] "a" "b" "c" "d"
+```
 
-- 리스트를 반환하는 다른  stringr 함수처럼 simplify = TRUE를 사용하여 행렬을
-반환할수 있다.
-
-sentence %>% 
+리스트를 반환하는 다른  stringr 함수처럼 `simplify = TRUE`를 사용하여 행렬을 반환할 수 있음  
+```{r}
+sentences %>% 
  head(5) %>%
  str_split(" ", simplify = TRUE)
+```
 
--반환활 조각의  최대 개수를 지정할 수도 있다.
-- 패턴으로 문자열을 분할하는 대신 boundary() 함수를 사용하여 문자, 줄 문장 혹은 
-단어를 경계로 분할할 수도 있다.
+반환활 조각의  최대 개수를 지정할 수도 있음
+```{r}
+fields <- c("Name: Hadley", "Country: NZ", "Age: 35")
+fields %>% str_split(": ", n = 2, simplify = TRUE)
+```
 
-x <- "This is a sentence. This another sentence".
+패턴으로 문자열을 분할하는 대신 boundary() 함수를 사용하여 문자, 줄 문장 혹은 단어를 경계로 분할할 수도 있음  
+```{r}
+x <- "This is a sentence. This another sentence."
 str_view_all(x, boundary("word"))
+
+str_split(x, " ")[[1]]
+
+str_split(x, boundary("word"))[[1]]
+```
 
 ### 4.10 연습문제
 
-1." apples,pears, and bananas" 와 같은 문자열은 개별구성요소로 분할하라.
+1." apples,pears, and bananas" 와 같은 문자열은 개별구성요소로 분할하라.  
 
-2. 왜 " " 보다 boundary("word")로 분할하는 것이 좋은가?
+2. 왜 " " 보다 boundary("word")로 분할하는 것이 좋은가?  
 
-3. 빈 문자열("")로 분할하면 어떻게 되는가? 실험해본후, 설명서를 읽어보라.
+3. 빈 문자열("")로 분할하면 어떻게 되는가? 실험해본후, 설명서를 읽어보라.  
+
 
 ## 5. 기타 패턴 유형
-- 문자열로 된 패턴을 사용하며 자동으로 regex()호출로 래핑된다.
-
-일반적인 호출(아래의 긴 호출과 같다)
+문자열로 된 패턴을 사용하면, regex() 호출로 자동 래핑됨  
+```{r}
+#일반적인 호출(아래의 긴 호출과 같다)
 str_view(fruit, "nana")
 
-긴 호출
+#긴 호출
 str_view(fruit , regex("nana"))
+```
 
--regex()의 다른 인수를 사용하여 매치의 세부사황을 제어할 수 있다.
-- igonore_case = TRUE를 하면 문자가 대문자나 소문자 형태 모두로 매칭된다.
- 항상 현재의 로캘을 사용한다.
-
+regex()의 다른 인수를 사용하여 매치의 세부사황을 제어할 수 있음  
+- `igonore_case = TRUE`를 하면 문자가 대문자나 소문자 형태 모두로 매칭, 항상 현재의 로캘을 사용
+```{r}
 bananas <- c("banana", "Banana", "BANANA")
 str_view(bananas, "banana")
 
 str_view(bananas, "banana")
+```
 
--multiline = TRUE를 하면 ^와 $이 전체 문자열의 시작, 끝이 아니라 각 라인의 
-시작과 끝이 매칭된다.
+- `multiline = TRUE`를 하면 ^와 $이 전체 문자열의 시작, 끝이 아니라 각 라인의 시작과 끝이 매칭  
+```{r}
 X <- "Line 1/nLine 2/nLine 3"
-str-extract_all(x, "^Line")
+str_extract_all(x, "^Line")
+```
 
-- comments = TRUE를 하면 복잡한 정규표현식을 이해하기 쉽도록 설명과 공백을
-사용할 수 있게 된다.
+- `comments = TRUE`를 하면 복잡한 정규표현식을 이해하기 쉽도록 설명과 공백 사용이 가능해짐  
 
-- dotall = TRUE를 하면 . 이 /n을 포함한 모든 문자에 매칭된다.
-regex() 대신 사용할 수 있는 함수가 세 가지 있다.
+- `dotall = TRUE`를 하면 .이 \n을 포함한 모든 문자에 매칭  
 
-- fixed()는 지정된 일련의 바이트와 정확히 매치한다.
++추가: regex() 대신 사용할 수 있는 함수 3가지  
+- fixed()는 지정된 일련의 바이트와 정확히 매치  
+install.packages("microbenchmark")
+library(microbenchmark)
 
-fixed()를 영어가 아닌 언어에 사용할 때는 조심하라. 
-
-동잏하게 렌더링하지만 다르게 정의되었기 때문에 fixed()가 매치를 찾지 못 한다.
-
+```{r}
+microbenchmark::microbenchmark(
+  fixed = str_detect(sentences, fixed("the")),
+  regex = str_detect(sentences, "the"),
+  times = 20)
+```
+* fixed()를 영어가 아닌 언어에 사용할 때는 주의: 같은 문자를 나타내는 방법이 여러가지라 문제되는 경우가 많음  
+```{r}
+a1 <- "\u00e1"
+a2 <- "a\u0301"
+```
+동일하게 렌더링하지만 다르게 정의되었기 때문에 fixed()가 매치를 찾지 못함  
+대신, 인간의 문자 비교 규칙을 존중하는 coll()을 사용할 수 있음  
+```{r}
 str_detect(a1, fixed(a2))
+str_detect(a1, coll(a2))
+```
 
-- coll()은 표준 대조(collation) 규칙을 사용하여 문자열을 비교한다.
-- 대문자를 구분하지 않는 (case-insensitive) 매치를 수행할 때 유용하다.
-따라서 대소문자를 구분하지 않는 매치를 수행할 경우 지역별 차이에 대해 조심해야 한다.
+- coll()은 표준 대조(collation) 규칙을 사용하여 문자열을 비교  
+: 대문자를 구분하지 않는 (case-insensitive) 매치를 수행할 때 유용  
+```{r}
+# 따라서 대소문자를 구분하지 않는 매치를 수행할 경우
+# 지역별 차이 주의 필요
+i <- c("I", "İ", "i", "ı")
+i
+
+str_subset(i, coll("i", ignore_case = TRUE))
+```
+
+< 누락된 내용 추가 필요 >
+
 
 -str_split()에서 보았듯이 boundary()를 사용하여 경계를 매치할 수 있다.
 - 다른 함수들과도 사용할 수 있다.
