@@ -2467,12 +2467,12 @@ div.tocify {
 정규표현식(regular expression, regexp)에 초점을 맞추어 학습<br />
 cf) 문자열은 일반적으로 비정형 및 반정형 데이터를 포함하는데, 정규표현식은 문자열의 패턴을 간결하게 기술하는 언어</p>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## -- Attaching packages ------------------ tidyverse 1.3.0 --</code></pre>
+<pre><code>## -- Attaching packages ------------------------- tidyverse 1.3.0 --</code></pre>
 <pre><code>## √ ggplot2 3.3.2     √ purrr   0.3.4
 ## √ tibble  3.0.3     √ dplyr   1.0.2
 ## √ tidyr   1.1.2     √ stringr 1.4.0
 ## √ readr   1.3.1     √ forcats 0.5.0</code></pre>
-<pre><code>## -- Conflicts --------------------- tidyverse_conflicts() --
+<pre><code>## -- Conflicts ---------------------------- tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 <pre class="r"><code>library(stringr)</code></pre>
@@ -2621,14 +2621,14 @@ library(htmlwidgets)</li>
 </ul>
 <pre class="r"><code>x &lt;- c(&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;)
 str_view(x, &quot;an&quot;)</code></pre>
-<div id="htmlwidget-e4250f0484d35f65510e" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e4250f0484d35f65510e">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bafe9edc38e9e7d11ef8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bafe9edc38e9e7d11ef8">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>(줄바꿈을 제외한) 임의의 문자와 매칭하는 <code>.</code></li>
 </ul>
 <pre class="r"><code>str_view(x, &quot;.a.&quot;)</code></pre>
-<p><div id="htmlwidget-c2a18791d3bac66ba912" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c2a18791d3bac66ba912">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>p<span class='match'>ear<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> cf) “.”이 임의의 문자와 매칭된다면, 문자 “.”은 어떻게 매칭되는가? <code>이스케이프</code>를 사용하여 특별 동작 사용이 아닌, 정확한 매칭을 원한다는 것을 정규표현식에 표현해야 함</p>
+<p><div id="htmlwidget-91292b485e42d2c2f925" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-91292b485e42d2c2f925">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>p<span class='match'>ear<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> cf) “.”이 임의의 문자와 매칭된다면, 문자 “.”은 어떻게 매칭되는가? <code>이스케이프</code>를 사용하여 특별 동작 사용이 아닌, 정확한 매칭을 원한다는 것을 정규표현식에 표현해야 함</p>
 <p>정규표현식도 문자열과 마찬가지로 특별한 동작을 이스케이프하기 위해 <code>\</code>을 사용<br />
 -&gt; <code>.</code>을 매칭하기 위해서는 정규표현식 <code>\.</code>을 사용해야 함<br />
 다만, 정규표현식을 나타내기 위해 문자열을 사용했고 <code>\</code>을 이스케이프로 사용했음<br />
@@ -2638,8 +2638,8 @@ str_view(x, &quot;an&quot;)</code></pre>
 writeLines(dot) # 정규표현식 자체는 역슬래시를 하나만 가짐</code></pre>
 <pre><code>## \.</code></pre>
 <pre class="r"><code>str_view(c(&quot;abc&quot;, &quot;a.c&quot;, &quot;bef&quot;), &quot;a\\.c&quot;) # r에서 .을 정확하게 찾는 법</code></pre>
-<div id="htmlwidget-8f5fe01bfb3e48b76773" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8f5fe01bfb3e48b76773">{"x":{"html":"<ul>\n  <li>abc<\/li>\n  <li><span class='match'>a.c<\/span><\/li>\n  <li>bef<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-45fb71a8bca802b73b53" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-45fb71a8bca802b73b53">{"x":{"html":"<ul>\n  <li>abc<\/li>\n  <li><span class='match'>a.c<\/span><\/li>\n  <li>bef<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>정규표현식에서 <code>\</code>를 이스케이프 문자로 사용한다면 문자 <code>\</code>는 어떻게 쓸 것인가?<br />
 -&gt; 정규표현식 <code>\\</code>를 만들어 이스케이프해야 함 -&gt; 정규표현식은 문자열로 표현해야 함<br />
 -&gt; 문자열에서도 <code>\</code> 표현 시 이스케이프 필요 -&gt; 즉, 문자 <code>\</code> 매칭하기 위해 <code>&quot;\\\\&quot;</code>라고 작성해야 함(하나를 매칭하기 위해 4개의 역슬래시 필요)</p>
@@ -2647,8 +2647,8 @@ writeLines(dot) # 정규표현식 자체는 역슬래시를 하나만 가짐</co
 writeLines(x)</code></pre>
 <pre><code>## a//b</code></pre>
 <pre class="r"><code>str_view(x,&quot;////&quot;)</code></pre>
-<p><div id="htmlwidget-e02fb53f8f2dab07073d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e02fb53f8f2dab07073d">{"x":{"html":"<ul>\n  <li>a//b<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> 본 교재에서 정규표현식은 <code>\.</code>로, 정규표현식을 나타내는 문자열은 <code>&quot;\\.&quot;</code>로 표기</p>
+<p><div id="htmlwidget-3b00b239bfb8bcb4a9ed" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3b00b239bfb8bcb4a9ed">{"x":{"html":"<ul>\n  <li>a//b<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> 본 교재에서 정규표현식은 <code>\.</code>로, 정규표현식을 나타내는 문자열은 <code>&quot;\\.&quot;</code>로 표기</p>
 </div>
 <div id="연습문제-1" class="section level3">
 <h3>3.2 연습문제</h3>
@@ -2667,18 +2667,18 @@ writeLines(x)</code></pre>
 . ^: 문자열의 시작과 매칭 . $: 문자열의 끝과 매칭</p>
 <pre class="r"><code>x &lt;- c(&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;)
 str_view(x, &quot;^a&quot;)</code></pre>
-<div id="htmlwidget-8069ed167fa9908cee68" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8069ed167fa9908cee68">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-59674571a5cb83edb75f" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-59674571a5cb83edb75f">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &quot;a$&quot;)</code></pre>
-<p><div id="htmlwidget-556dbb1c02520ba31e3d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-556dbb1c02520ba31e3d">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> <strong>‘파워(^)로 시작하면 , 돈($)으로 끝나게 된다’</strong></p>
+<p><div id="htmlwidget-5f5f4a7b2c9cde670eaf" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5f5f4a7b2c9cde670eaf">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> <strong>‘파워(^)로 시작하면 , 돈($)으로 끝나게 된다’</strong></p>
 <pre class="r"><code>x &lt;- c(&quot;apple pie&quot;, &quot;apple&quot;, &quot;apple cake&quot;)
 str_view(x, &quot;apple&quot;)</code></pre>
-<div id="htmlwidget-dfb05bacbec4f7a993a3" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dfb05bacbec4f7a993a3">{"x":{"html":"<ul>\n  <li><span class='match'>apple<\/span> pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li><span class='match'>apple<\/span> cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-21648af827930643b649" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-21648af827930643b649">{"x":{"html":"<ul>\n  <li><span class='match'>apple<\/span> pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li><span class='match'>apple<\/span> cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &quot;^apple$&quot;)</code></pre>
-<div id="htmlwidget-5c32ec05c46b79e5f784" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5c32ec05c46b79e5f784">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d3ddc79ae4da25a0d301" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d3ddc79ae4da25a0d301">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="연습문제-2" class="section level3">
 <h3>3.4 연습문제</h3>
@@ -2710,8 +2710,8 @@ str_view(x, &quot;apple&quot;)</code></pre>
 . [^abc]는 a,b 또는 c 를 제외한 임의의 문자와 매치한다.</code></pre>
 <p>포함하는 정규표현식을 만들기 위해서는 해당 문자열에서 <code>\</code>를 이스케이프해야 함 -&gt; <code>\\d</code>나 <code>\\s</code>로 입력해야 함</p>
 <pre class="r"><code>str_view(c(&quot;grey&quot;, &quot;gray&quot;),&quot;gr(e/a)y&quot;)    </code></pre>
-<div id="htmlwidget-bb2cd0391c7eac5c996f" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bb2cd0391c7eac5c996f">{"x":{"html":"<ul>\n  <li>grey<\/li>\n  <li>gray<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-283883e8c9fef9cc776c" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-283883e8c9fef9cc776c">{"x":{"html":"<ul>\n  <li>grey<\/li>\n  <li>gray<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="연습문제-3" class="section level2">
 <h2>3.6 연습문제</h2>
@@ -2741,18 +2741,18 @@ str_view(x, &quot;apple&quot;)</code></pre>
 <p>. ?: 0또는 1회 . +: 1회 이상 . *: 0회 이상</p>
 <pre class="r"><code>x &lt;- &quot;1888 is the longest year in Roman numerals: MDCCCLXXXVIII&quot;
 str_view(x, &quot;CC?&quot;)</code></pre>
-<div id="htmlwidget-7af9f01cdc8cf92aca0d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7af9f01cdc8cf92aca0d">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d8859a1eb4e4dce9522d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d8859a1eb4e4dce9522d">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &quot;CC+&quot;)</code></pre>
-<div id="htmlwidget-67631f4e64e707c6fb59" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-67631f4e64e707c6fb59">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-87e63a4d0a49d53a122c" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-87e63a4d0a49d53a122c">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &#39;C[LX]+&#39;)</code></pre>
-<div id="htmlwidget-7b189276249180f9e3ed" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7b189276249180f9e3ed">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MDCC<span class='match'>CLXXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8a165fb603ea4f17e63a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8a165fb603ea4f17e63a">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MDCC<span class='match'>CLXXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>. {n}: 정확히 n회 . {n,}: n회 이상 . {,m}: 최대 m회 . {n,m}: n과m회 사이</p>
 <pre class="r"><code>str_view(x,&quot;c{2}&quot;)</code></pre>
-<div id="htmlwidget-6b5eafc7c5b602dbba27" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6b5eafc7c5b602dbba27">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MDCCCLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a8dfbf3ac0b80d1ba541" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a8dfbf3ac0b80d1ba541">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MDCCCLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="연습문제-4" class="section level2">
 <h2>3.8 연습문제</h2>
@@ -2790,8 +2790,8 @@ c./d {4}-/d{2}-/d{2}<br />
 괄호는 \1, \2처럼 번호를 사용해 역참조(backreference)할 수 있는 그룹을 정의하기도 함</p>
 <p>ex) 다음의 정규표현식은 두 글자가 반복되는 과일 이름과 매칭</p>
 <pre class="r"><code>str_view(fruit,&quot;(..)//1&quot;, match = TRUE)</code></pre>
-<p><div id="htmlwidget-2f4c260952dfc74a8aee" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2f4c260952dfc74a8aee">{"x":{"html":"<ul>\n  <li><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> (str_view()와 함꼐 쓰면 왜 유용한지 곧 알게 될 것)</p>
+<p><div id="htmlwidget-8ce325d58584704771d6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8ce325d58584704771d6">{"x":{"html":"<ul>\n  <li><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> (str_view()와 함꼐 쓰면 왜 유용한지 곧 알게 될 것)</p>
 </div>
 <div id="연습문제-5" class="section level2">
 <h2>3.10 연습문제</h2>
@@ -2897,8 +2897,8 @@ ex) “abababa” 에서 “aba” 패턴이 몇 번 매칭하는가? -&gt; 정�
 <pre class="r"><code>str_count(&quot;abababa&quot;, &quot;aba&quot;)</code></pre>
 <pre><code>## [1] 2</code></pre>
 <pre class="r"><code>str_view_all(&quot;abababa&quot;, &quot;aba&quot;)</code></pre>
-<p><div id="htmlwidget-965b04bb2faa724952c7" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-965b04bb2faa724952c7">{"x":{"html":"<ul>\n  <li><span class='match'>aba<\/span>b<span class='match'>aba<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> -str_view_all()의 용법에 주의 (많은 stringr 함수는 쌍으로 제공, 모든 매칭에 동작하는 함수는 접미사 _all이 붙음)</p>
+<p><div id="htmlwidget-638ae0e4ca229ac81c6b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-638ae0e4ca229ac81c6b">{"x":{"html":"<ul>\n  <li><span class='match'>aba<\/span>b<span class='match'>aba<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> -str_view_all()의 용법에 주의 (많은 stringr 함수는 쌍으로 제공, 모든 매칭에 동작하는 함수는 접미사 _all이 붙음)</p>
 <div id="연습문제-6" class="section level3">
 <h3>4.2 연습문제</h3>
 <ol style="list-style-type: decimal">
@@ -2948,8 +2948,8 @@ head(matches)</code></pre>
 <p>library(stringr)</p>
 <pre class="r"><code>more &lt;- sentences[str_count(sentences, color_match) &gt; 1]
 str_view_all(more, color_match)</code></pre>
-<div id="htmlwidget-2a1acc0c8088103f7478" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2a1acc0c8088103f7478">{"x":{"html":"<ul>\n  <li><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5421cb026c0cfa8975d7" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5421cb026c0cfa8975d7">{"x":{"html":"<ul>\n  <li><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_extract(more, color_match)</code></pre>
 <pre><code>## character(0)</code></pre>
 <p>stringr 함수의 일반적인 패턴 &lt;- 매칭 하나로 작업하면 훨씬 단순한 데이터 구조를 사용할 수 있기 때문</p>
@@ -3113,8 +3113,8 @@ fields %&gt;% str_split(&quot;: &quot;, n = 2, simplify = TRUE)</code></pre>
 <p>패턴으로 문자열을 분할하는 대신 boundary() 함수를 사용하여 문자, 줄 문장 혹은 단어를 경계로 분할할 수도 있음</p>
 <pre class="r"><code>x &lt;- &quot;This is a sentence. This another sentence.&quot;
 str_view_all(x, boundary(&quot;word&quot;))</code></pre>
-<div id="htmlwidget-2a46da49e93dcc878e88" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2a46da49e93dcc878e88">{"x":{"html":"<ul>\n  <li><span class='match'>This<\/span> <span class='match'>is<\/span> <span class='match'>a<\/span> <span class='match'>sentence<\/span>. <span class='match'>This<\/span> <span class='match'>another<\/span> <span class='match'>sentence<\/span>.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-107f53135c00011a6d8d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-107f53135c00011a6d8d">{"x":{"html":"<ul>\n  <li><span class='match'>This<\/span> <span class='match'>is<\/span> <span class='match'>a<\/span> <span class='match'>sentence<\/span>. <span class='match'>This<\/span> <span class='match'>another<\/span> <span class='match'>sentence<\/span>.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_split(x, &quot; &quot;)[[1]]</code></pre>
 <pre><code>## [1] &quot;This&quot;      &quot;is&quot;        &quot;a&quot;         &quot;sentence.&quot; &quot;This&quot;      &quot;another&quot;  
 ## [7] &quot;sentence.&quot;</code></pre>
@@ -3135,21 +3135,21 @@ str_view_all(x, boundary(&quot;word&quot;))</code></pre>
 <p>문자열로 된 패턴을 사용하면, regex() 호출로 자동 래핑됨</p>
 <pre class="r"><code>#일반적인 호출(아래의 긴 호출과 같다)
 str_view(fruit, &quot;nana&quot;)</code></pre>
-<div id="htmlwidget-612f640b15bf2f9a9005" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-612f640b15bf2f9a9005">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>ba<span class='match'>nana<\/span><\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n  <li>boysenberry<\/li>\n  <li>breadfruit<\/li>\n  <li>canary melon<\/li>\n  <li>cantaloupe<\/li>\n  <li>cherimoya<\/li>\n  <li>cherry<\/li>\n  <li>chili pepper<\/li>\n  <li>clementine<\/li>\n  <li>cloudberry<\/li>\n  <li>coconut<\/li>\n  <li>cranberry<\/li>\n  <li>cucumber<\/li>\n  <li>currant<\/li>\n  <li>damson<\/li>\n  <li>date<\/li>\n  <li>dragonfruit<\/li>\n  <li>durian<\/li>\n  <li>eggplant<\/li>\n  <li>elderberry<\/li>\n  <li>feijoa<\/li>\n  <li>fig<\/li>\n  <li>goji berry<\/li>\n  <li>gooseberry<\/li>\n  <li>grape<\/li>\n  <li>grapefruit<\/li>\n  <li>guava<\/li>\n  <li>honeydew<\/li>\n  <li>huckleberry<\/li>\n  <li>jackfruit<\/li>\n  <li>jambul<\/li>\n  <li>jujube<\/li>\n  <li>kiwi fruit<\/li>\n  <li>kumquat<\/li>\n  <li>lemon<\/li>\n  <li>lime<\/li>\n  <li>loquat<\/li>\n  <li>lychee<\/li>\n  <li>mandarine<\/li>\n  <li>mango<\/li>\n  <li>mulberry<\/li>\n  <li>nectarine<\/li>\n  <li>nut<\/li>\n  <li>olive<\/li>\n  <li>orange<\/li>\n  <li>pamelo<\/li>\n  <li>papaya<\/li>\n  <li>passionfruit<\/li>\n  <li>peach<\/li>\n  <li>pear<\/li>\n  <li>persimmon<\/li>\n  <li>physalis<\/li>\n  <li>pineapple<\/li>\n  <li>plum<\/li>\n  <li>pomegranate<\/li>\n  <li>pomelo<\/li>\n  <li>purple mangosteen<\/li>\n  <li>quince<\/li>\n  <li>raisin<\/li>\n  <li>rambutan<\/li>\n  <li>raspberry<\/li>\n  <li>redcurrant<\/li>\n  <li>rock melon<\/li>\n  <li>salal berry<\/li>\n  <li>satsuma<\/li>\n  <li>star fruit<\/li>\n  <li>strawberry<\/li>\n  <li>tamarillo<\/li>\n  <li>tangerine<\/li>\n  <li>ugli fruit<\/li>\n  <li>watermelon<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9642b7006390f46d2b44" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9642b7006390f46d2b44">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>ba<span class='match'>nana<\/span><\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n  <li>boysenberry<\/li>\n  <li>breadfruit<\/li>\n  <li>canary melon<\/li>\n  <li>cantaloupe<\/li>\n  <li>cherimoya<\/li>\n  <li>cherry<\/li>\n  <li>chili pepper<\/li>\n  <li>clementine<\/li>\n  <li>cloudberry<\/li>\n  <li>coconut<\/li>\n  <li>cranberry<\/li>\n  <li>cucumber<\/li>\n  <li>currant<\/li>\n  <li>damson<\/li>\n  <li>date<\/li>\n  <li>dragonfruit<\/li>\n  <li>durian<\/li>\n  <li>eggplant<\/li>\n  <li>elderberry<\/li>\n  <li>feijoa<\/li>\n  <li>fig<\/li>\n  <li>goji berry<\/li>\n  <li>gooseberry<\/li>\n  <li>grape<\/li>\n  <li>grapefruit<\/li>\n  <li>guava<\/li>\n  <li>honeydew<\/li>\n  <li>huckleberry<\/li>\n  <li>jackfruit<\/li>\n  <li>jambul<\/li>\n  <li>jujube<\/li>\n  <li>kiwi fruit<\/li>\n  <li>kumquat<\/li>\n  <li>lemon<\/li>\n  <li>lime<\/li>\n  <li>loquat<\/li>\n  <li>lychee<\/li>\n  <li>mandarine<\/li>\n  <li>mango<\/li>\n  <li>mulberry<\/li>\n  <li>nectarine<\/li>\n  <li>nut<\/li>\n  <li>olive<\/li>\n  <li>orange<\/li>\n  <li>pamelo<\/li>\n  <li>papaya<\/li>\n  <li>passionfruit<\/li>\n  <li>peach<\/li>\n  <li>pear<\/li>\n  <li>persimmon<\/li>\n  <li>physalis<\/li>\n  <li>pineapple<\/li>\n  <li>plum<\/li>\n  <li>pomegranate<\/li>\n  <li>pomelo<\/li>\n  <li>purple mangosteen<\/li>\n  <li>quince<\/li>\n  <li>raisin<\/li>\n  <li>rambutan<\/li>\n  <li>raspberry<\/li>\n  <li>redcurrant<\/li>\n  <li>rock melon<\/li>\n  <li>salal berry<\/li>\n  <li>satsuma<\/li>\n  <li>star fruit<\/li>\n  <li>strawberry<\/li>\n  <li>tamarillo<\/li>\n  <li>tangerine<\/li>\n  <li>ugli fruit<\/li>\n  <li>watermelon<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#긴 호출
 str_view(fruit , regex(&quot;nana&quot;))</code></pre>
-<div id="htmlwidget-4eac8f20e64ca49f41ec" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4eac8f20e64ca49f41ec">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>ba<span class='match'>nana<\/span><\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n  <li>boysenberry<\/li>\n  <li>breadfruit<\/li>\n  <li>canary melon<\/li>\n  <li>cantaloupe<\/li>\n  <li>cherimoya<\/li>\n  <li>cherry<\/li>\n  <li>chili pepper<\/li>\n  <li>clementine<\/li>\n  <li>cloudberry<\/li>\n  <li>coconut<\/li>\n  <li>cranberry<\/li>\n  <li>cucumber<\/li>\n  <li>currant<\/li>\n  <li>damson<\/li>\n  <li>date<\/li>\n  <li>dragonfruit<\/li>\n  <li>durian<\/li>\n  <li>eggplant<\/li>\n  <li>elderberry<\/li>\n  <li>feijoa<\/li>\n  <li>fig<\/li>\n  <li>goji berry<\/li>\n  <li>gooseberry<\/li>\n  <li>grape<\/li>\n  <li>grapefruit<\/li>\n  <li>guava<\/li>\n  <li>honeydew<\/li>\n  <li>huckleberry<\/li>\n  <li>jackfruit<\/li>\n  <li>jambul<\/li>\n  <li>jujube<\/li>\n  <li>kiwi fruit<\/li>\n  <li>kumquat<\/li>\n  <li>lemon<\/li>\n  <li>lime<\/li>\n  <li>loquat<\/li>\n  <li>lychee<\/li>\n  <li>mandarine<\/li>\n  <li>mango<\/li>\n  <li>mulberry<\/li>\n  <li>nectarine<\/li>\n  <li>nut<\/li>\n  <li>olive<\/li>\n  <li>orange<\/li>\n  <li>pamelo<\/li>\n  <li>papaya<\/li>\n  <li>passionfruit<\/li>\n  <li>peach<\/li>\n  <li>pear<\/li>\n  <li>persimmon<\/li>\n  <li>physalis<\/li>\n  <li>pineapple<\/li>\n  <li>plum<\/li>\n  <li>pomegranate<\/li>\n  <li>pomelo<\/li>\n  <li>purple mangosteen<\/li>\n  <li>quince<\/li>\n  <li>raisin<\/li>\n  <li>rambutan<\/li>\n  <li>raspberry<\/li>\n  <li>redcurrant<\/li>\n  <li>rock melon<\/li>\n  <li>salal berry<\/li>\n  <li>satsuma<\/li>\n  <li>star fruit<\/li>\n  <li>strawberry<\/li>\n  <li>tamarillo<\/li>\n  <li>tangerine<\/li>\n  <li>ugli fruit<\/li>\n  <li>watermelon<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6e0ad7897edd50d13e7f" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6e0ad7897edd50d13e7f">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>ba<span class='match'>nana<\/span><\/li>\n  <li>bell pepper<\/li>\n  <li>bilberry<\/li>\n  <li>blackberry<\/li>\n  <li>blackcurrant<\/li>\n  <li>blood orange<\/li>\n  <li>blueberry<\/li>\n  <li>boysenberry<\/li>\n  <li>breadfruit<\/li>\n  <li>canary melon<\/li>\n  <li>cantaloupe<\/li>\n  <li>cherimoya<\/li>\n  <li>cherry<\/li>\n  <li>chili pepper<\/li>\n  <li>clementine<\/li>\n  <li>cloudberry<\/li>\n  <li>coconut<\/li>\n  <li>cranberry<\/li>\n  <li>cucumber<\/li>\n  <li>currant<\/li>\n  <li>damson<\/li>\n  <li>date<\/li>\n  <li>dragonfruit<\/li>\n  <li>durian<\/li>\n  <li>eggplant<\/li>\n  <li>elderberry<\/li>\n  <li>feijoa<\/li>\n  <li>fig<\/li>\n  <li>goji berry<\/li>\n  <li>gooseberry<\/li>\n  <li>grape<\/li>\n  <li>grapefruit<\/li>\n  <li>guava<\/li>\n  <li>honeydew<\/li>\n  <li>huckleberry<\/li>\n  <li>jackfruit<\/li>\n  <li>jambul<\/li>\n  <li>jujube<\/li>\n  <li>kiwi fruit<\/li>\n  <li>kumquat<\/li>\n  <li>lemon<\/li>\n  <li>lime<\/li>\n  <li>loquat<\/li>\n  <li>lychee<\/li>\n  <li>mandarine<\/li>\n  <li>mango<\/li>\n  <li>mulberry<\/li>\n  <li>nectarine<\/li>\n  <li>nut<\/li>\n  <li>olive<\/li>\n  <li>orange<\/li>\n  <li>pamelo<\/li>\n  <li>papaya<\/li>\n  <li>passionfruit<\/li>\n  <li>peach<\/li>\n  <li>pear<\/li>\n  <li>persimmon<\/li>\n  <li>physalis<\/li>\n  <li>pineapple<\/li>\n  <li>plum<\/li>\n  <li>pomegranate<\/li>\n  <li>pomelo<\/li>\n  <li>purple mangosteen<\/li>\n  <li>quince<\/li>\n  <li>raisin<\/li>\n  <li>rambutan<\/li>\n  <li>raspberry<\/li>\n  <li>redcurrant<\/li>\n  <li>rock melon<\/li>\n  <li>salal berry<\/li>\n  <li>satsuma<\/li>\n  <li>star fruit<\/li>\n  <li>strawberry<\/li>\n  <li>tamarillo<\/li>\n  <li>tangerine<\/li>\n  <li>ugli fruit<\/li>\n  <li>watermelon<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>regex()의 다른 인수를 사용하여 매치의 세부사황을 제어할 수 있음<br />
 - <code>igonore_case = TRUE</code>를 하면 문자가 대문자나 소문자 형태 모두로 매칭, 항상 현재의 로캘을 사용</p>
 <pre class="r"><code>bananas &lt;- c(&quot;banana&quot;, &quot;Banana&quot;, &quot;BANANA&quot;)
 str_view(bananas, &quot;banana&quot;)</code></pre>
-<div id="htmlwidget-5cfc7a01f3e64344d8f2" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5cfc7a01f3e64344d8f2">{"x":{"html":"<ul>\n  <li><span class='match'>banana<\/span><\/li>\n  <li>Banana<\/li>\n  <li>BANANA<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9134b8fdac822d9b6f7b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9134b8fdac822d9b6f7b">{"x":{"html":"<ul>\n  <li><span class='match'>banana<\/span><\/li>\n  <li>Banana<\/li>\n  <li>BANANA<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(bananas, &quot;banana&quot;)</code></pre>
-<div id="htmlwidget-a297c37029adfb93ad9c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a297c37029adfb93ad9c">{"x":{"html":"<ul>\n  <li><span class='match'>banana<\/span><\/li>\n  <li>Banana<\/li>\n  <li>BANANA<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3cb28ab45d3c0fc3a5ed" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3cb28ab45d3c0fc3a5ed">{"x":{"html":"<ul>\n  <li><span class='match'>banana<\/span><\/li>\n  <li>Banana<\/li>\n  <li>BANANA<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>multiline = TRUE</code>를 하면 ^와 $이 전체 문자열의 시작, 끝이 아니라 각 라인의 시작과 끝이 매칭</li>
 </ul>
@@ -3169,9 +3169,9 @@ install.packages(“microbenchmark”) library(microbenchmark)</p>
   regex = str_detect(sentences, &quot;the&quot;),
   times = 20)</code></pre>
 <pre><code>## Unit: microseconds
-##   expr     min       lq     mean  median       uq     max neval
-##  fixed  66.000  69.4515 103.3010  71.801 115.4505 267.201    20
-##  regex 194.302 195.7010 242.2011 207.401 293.9010 392.001    20</code></pre>
+##   expr   min     lq    mean median     uq   max neval
+##  fixed  93.3 106.45 153.315 127.95 166.10 512.7    20
+##  regex 265.3 292.85 353.885 339.25 368.05 577.0    20</code></pre>
 <ul>
 <li>fixed()를 영어가 아닌 언어에 사용할 때는 주의: 같은 문자를 나타내는 방법이 여러가지라 문제되는 경우가 많음</li>
 </ul>
@@ -3189,6 +3189,7 @@ a2 &lt;- &quot;a\u0301&quot;</code></pre>
 <dd>대문자를 구분하지 않는 (case-insensitive) 매치를 수행할 때 유용
 </dd>
 </dl></li>
+<li>주의: coll()은 문자 비교 규칙을 제어하는 로캘 파라미터를 취함, 세계 각 지역은 다른 규칙을 사용</li>
 </ul>
 <pre class="r"><code># 따라서 대소문자를 구분하지 않는 매치를 수행할 경우
 # 지역별 차이 주의 필요
@@ -3197,8 +3198,27 @@ i</code></pre>
 <pre><code>## [1] &quot;I&quot;        &quot;&lt;U+0130&gt;&quot; &quot;i&quot;        &quot;ı&quot;</code></pre>
 <pre class="r"><code>str_subset(i, coll(&quot;i&quot;, ignore_case = TRUE))</code></pre>
 <pre><code>## [1] &quot;I&quot; &quot;i&quot;</code></pre>
-<p>&lt; 누락된 내용 추가 필요 &gt;</p>
-<p>-str_split()에서 보았듯이 boundary()를 사용하여 경계를 매치할 수 있다. - 다른 함수들과도 사용할 수 있다. x &lt;- “this is a sentence.” str_view_all(x, bounary(“word”))</p>
+<p>fixed()와 regex()에도 ignore_case 인수가 있지만, 로캘 선택을 허용하지는 않음</p>
+<pre class="r"><code>stringi::stri_locale_info()</code></pre>
+<pre><code>## $Language
+## [1] &quot;ko&quot;
+## 
+## $Country
+## [1] &quot;KR&quot;
+## 
+## $Variant
+## [1] &quot;&quot;
+## 
+## $Name
+## [1] &quot;ko_KR&quot;</code></pre>
+<ul>
+<li><p>coll()의 단점: 속도 -&gt; 어느 문자가 같은지 인식하는 규칙이 복잡하기 때문에 coll()은 regex()와 fixed()에 비해 느림</p></li>
+<li><p>str_split()에서 보았듯이 boundary()를 사용하여 경계를 매치할 수 있음(다른 함수들과도 사용 가능)</p></li>
+</ul>
+<pre class="r"><code>x &lt;- &quot;this is a sentence.&quot;
+str_view_all(x, boundary(&quot;word&quot;))</code></pre>
+<div id="htmlwidget-6070a6229a0d617fe423" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6070a6229a0d617fe423">{"x":{"html":"<ul>\n  <li><span class='match'>this<\/span> <span class='match'>is<\/span> <span class='match'>a<\/span> <span class='match'>sentence<\/span>.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div id="연습문제-11" class="section level3">
 <h3>5.1 연습문제</h3>
 <ol style="list-style-type: decimal">
@@ -3209,24 +3229,36 @@ i</code></pre>
 </div>
 <div id="정규표현식의-기타용도" class="section level2">
 <h2>6. 정규표현식의 기타용도</h2>
-<p>-베이스 R의 다음의 두 함수도 정규표현식을 사용한다. . apropos()는 전역 환경에서 사용할 수 있는 모든 객체를 검색한다. apropos(“replace”)</p>
-<p>.dir()은 디렉터리에 있는 모든 파일을 나열한다.</p>
-<p>head(dir(pattern = “//. Rmd$”)) (*.Rmd 같은 ’글로브(globs) 패턴’에 익숙한 경우, glob2rx()를 사용하여 이를 정규표현식으로 변화할 수 있다.)</p>
+<p>베이스 R의 다음의 두 함수도 정규표현식을 사용 - apropos()<br />
+전역 환경에서 사용할 수 있는 모든 객체를 검색<br />
+함수 이름을 기억할 수 없는 경우에 유용</p>
+<pre class="r"><code>apropos(&quot;replace&quot;)</code></pre>
+<pre><code>## [1] &quot;%+replace%&quot;       &quot;replace&quot;          &quot;replace_na&quot;       &quot;setReplaceMethod&quot;
+## [5] &quot;str_replace&quot;      &quot;str_replace_all&quot;  &quot;str_replace_na&quot;   &quot;theme_replace&quot;</code></pre>
+<ul>
+<li>dir()<br />
+디렉터리에 있는 모든 파일을 나열<br />
+pattern 인수는 정규표현식을 취해 매치하는 파일 이름만 반환<br />
+ex. 현재 디렉터리에 있는 모든 R Markdown 파일 찾기</li>
+</ul>
+<pre class="r"><code>head(dir(pattern = &quot;\\.Rmd$&quot;))</code></pre>
+<pre><code>## [1] &quot;ch11_strings_stringr.Rmd&quot;</code></pre>
+<p>(*.Rmd 같은 ’글로브(globs) 패턴’에 익숙한 경우, glob2rx()를 사용하여 정규표현식으로 변환 가능)</p>
 </div>
 <div id="stringi" class="section level2">
 <h2>7. stringi</h2>
-<ul>
-<li>stringr은 stringi 패키지 기반으로 만들어졌다.</li>
-</ul>
+<p>stringr: stringi 패키지 기반으로 만들어짐<br />
+자주 사용하는 문자열 조작 함수를 다루기 위해 엄선된 최소한의 함수(43개)만 보여주어 학습할 때 유용<br />
+반면, stringi는 필요한 거의 모든 함수(232개)를 포함<br />
+접두사로 구분: stringr = str_ / stringi = stri_</p>
 <div id="연습문제-12" class="section level3">
 <h3>7.1 연습문제</h3>
 <ol style="list-style-type: decimal">
-<li>다음을 수행하는 stringi 함수를 찾아라.</li>
+<li>다음을 수행하는 stringi 함수를 찾아라. a.단어의 수 계산</li>
 </ol>
-<p>a.단어의 수 계산.</p>
 <ol start="2" style="list-style-type: lower-alpha">
-<li><p>중복 문자열을 찾음</p></li>
-<li><p>랜덤 텍스트 생성</p></li>
+<li>중복 문자열을 찾음</li>
+<li>랜덤 텍스트 생성</li>
 </ol>
 <ol start="2" style="list-style-type: decimal">
 <li>stri_sort()에서 정렬에서 사용할 언어를 어떻게 제어하겠는가?</li>
