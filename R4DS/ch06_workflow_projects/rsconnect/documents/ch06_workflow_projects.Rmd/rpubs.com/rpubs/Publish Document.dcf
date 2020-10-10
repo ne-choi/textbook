@@ -6,5 +6,5 @@ server: rpubs.com
 hostUrl: rpubs.com
 appId: https://api.rpubs.com/api/v1/document/671280/21d6a726ee8e40eb948a01c77d3be0a6
 bundleId: https://api.rpubs.com/api/v1/document/671280/21d6a726ee8e40eb948a01c77d3be0a6
-url: http://rpubs.com/publish/claim/671280/dd84c3028107419e9f3d8f83be946480
-when: 1602054781.62685
+url: http://rpubs.com/ne_choi/671280/edit
+when: 1602340044.22551
