@@ -130,3 +130,36 @@ y
 ![](image./enviroment.png)
 
 
+### 연습문제  
+1. 아래 코드가 작동되지 않는 이유는?
+```{r error = TRUE}
+my_variable <- 10
+my_varıable
+```
+답: 오타 (ı -< i)  
+
+2. 다음 각 R 명령어가 실행되도록 수정하라.
+```{r error = TRUE, message = FALSE}
+library(tidyverse)
+library(ggplot2)
+
+ggplot(dota = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+filter(mpg, cyl = 8)
+
+filter(diamond, carat > 3)
+```
+답: 오타
+```{r}
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+filter(mpg, cyl == 8)
+
+filter(diamonds, carat > 3)
+```  
+ 
+3. Alt + Shift + K를 누르고 어떻게 되는지 보라. 어떤 메뉴를 눌러야 같은 동작을 할 수 있는가?  
+답: 키보드 단축키 정리 항목을 볼 수 있음, Tools -> Keyboard Shortcuts Help 선택  
+
