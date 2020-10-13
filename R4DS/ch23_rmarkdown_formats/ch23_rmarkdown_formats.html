@@ -7067,7 +7067,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">23. R Markdown formats (+workflow)</h1>
 <h4 class="author">ne_choi</h4>
-<h4 class="date">2020 10 9</h4>
+<h4 class="date">2020 10 13</h4>
 
 </div>
 
@@ -7089,7 +7089,7 @@ output: html_document</code></pre>
 <li>일시적 방법: 직접 rmarkdown::render() 호출<br />
 </li>
 </ul>
-<pre><code>rmarkdown::remder(&quot;diamond-size.Rmd&quot;, output_format = &quot;word_document&quot;)  </code></pre>
+<pre><code>rmarkdown::render(&quot;diamond-size.Rmd&quot;, output_format = &quot;word_document&quot;)  </code></pre>
 -&gt; 여러 출력 유형 생성하는 것을 프로그래밍할 때, 유용한 방법</li>
 </ul>
 <p>RStudio의 knit 버튼을 클릭하면 output 필드의 첫 번째 형식으로 파일을 렌더링함<br />
@@ -7104,19 +7104,19 @@ knit 버튼 옆의 드롭다운 메뉴를 클릭하여 다른 형식으로 렌�
 </dd>
 </dl>
 <p>출력을 만드는 함수 이름을 확인하면 도움말을 얻을 수 있기에 중요함<br />
-ex. html_document와 함께 설정 가능한 파라미터를 알기 위해서는 ?rmarkdown::html_document를 해야 함</p>
+ex. html_document와 함께 설정 가능한 파라미터를 알기 위해서는 <code>?rmarkdown::html_document</code>를 해야 함</p>
 <p>기본 파라미터 값을 무시하는 방법: 확장된 출력 필드 이용<br />
 ex. 위치가 고정되지 않은(floating) 목차가 있는 html_document로 렌더링 하는 방법</p>
 <pre><code>output:
-  html_document:
-    toc: true
-    toc_float: true</code></pre>
+  html_document: #html 문서 생성
+    toc: true #목차 추가
+    toc_float: true #스크롤에 맞춰 목차 이동</code></pre>
 <p>포맷 리스트를 제공하기 때문에 다중 출력으로 렌더링할 수도 있음</p>
 <pre><code>output:
   html_document:
     toc: true
     toc_float: true
-  pdf_document: dafault</code></pre>
+  pdf_document: default #pdf 파일도 추출</code></pre>
 <p>cf. 기본 옵션을 덮어쓰지 않으려면 특수 구문을 주의</p>
 </div>
 <div id="문서" class="section level2">
@@ -7149,7 +7149,9 @@ html_notebook은 다른 데이터 과학자들과의 공동작업에 초점 -&gt
 <li><strong>노트북이 생성한 .nb.html을 사용하는 2가지 방법 </strong></li>
 <li>웹 브라우저에서 해당 파일을 보고 렌더링된 출력을 볼 수 있음: 렌더링을 생성한 소스 코드의 임베디드 복사본이 포함되는 것이 html_document와의 차이<br />
 </li>
-<li>RStudio에서 해당 파일을 편집할 수 있음: .nb.html 파일을 열 때, RStudio는 이를 생성한 .Rmd 파일을 자동으로 생성 -&gt; 필요할 때마다 파일을 자동으로 불러올 수 있음</li>
+<li>RStudio에서 해당 파일을 편집할 수 있음: .nb.html 파일을 열 때, RStudio는 이를 생성한 .Rmd 파일을 자동으로 생성 -&gt; 필요할 때마다 파일을 자동으로 불러올 수 있음<br />
+</li>
+<li>csv 파일 불러올 수 있을 것이라고 쓰여 있는데 현재 기준으로 확인해보자</li>
 </ul>
 <p>동료에게 분석 내용을 간단히 공유할 때는 <code>.nb.html</code> 파일을 이메일로 보내면 됨<br />
 단, 동료가 수정을 원하는 경우 깃허브를 사용하여 공동작업을 해야 함</p>
@@ -7213,8 +7215,8 @@ diamonds %&gt;%
   head(100) %&gt;% 
   select(carat, cut, color, price) %&gt;% 
   DT::datatable()</code></pre>
-<div id="htmlwidget-a01d37d30c1bb5e7b0d0" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a01d37d30c1bb5e7b0d0">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100"],[5.01,4.5,4.13,4.01,4.01,4,3.67,3.65,3.51,3.5,3.4,3.24,3.22,3.11,3.05,3.04,3.04,3.02,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3,3,3,3,3,3,3,3,2.8,2.8,2.77,2.75,2.75,2.74,2.74,2.74,2.72,2.72,2.72,2.71,2.7,2.68,2.68,2.67,2.66,2.66,2.66,2.65,2.64,2.63,2.63,2.63,2.61,2.61,2.61,2.6,2.6,2.6,2.59,2.58,2.58,2.58,2.57,2.57,2.57,2.56,2.56,2.56,2.55,2.55,2.55,2.54,2.54,2.54,2.54,2.54,2.54,2.54,2.54,2.54,2.53,2.53,2.53,2.53,2.53,2.53,2.53,2.53],["Fair","Fair","Fair","Premium","Premium","Very Good","Premium","Fair","Premium","Ideal","Fair","Premium","Ideal","Fair","Premium","Very Good","Premium","Fair","Premium","Premium","Fair","Premium","Ideal","Ideal","Premium","Fair","Fair","Good","Good","Good","Premium","Premium","Very Good","Fair","Good","Good","Premium","Good","Premium","Fair","Premium","Good","Premium","Ideal","Premium","Fair","Very Good","Very Good","Fair","Ideal","Ideal","Premium","Very Good","Premium","Very Good","Good","Good","Good","Good","Premium","Ideal","Very Good","Premium","Ideal","Good","Ideal","Ideal","Fair","Premium","Ideal","Ideal","Fair","Very Good","Premium","Premium","Premium","Premium","Good","Premium","Ideal","Premium","Good","Premium","Very Good","Ideal","Ideal","Premium","Very Good","Very Good","Very Good","Ideal","Very Good","Premium","Premium","Ideal","Ideal","Premium","Fair","Premium","Premium"],["J","J","H","I","J","I","I","H","J","H","D","H","I","J","E","I","I","I","I","F","H","G","J","J","I","I","I","I","I","H","J","J","H","H","I","E","G","J","I","I","I","G","H","D","H","J","J","H","J","H","J","E","H","G","I","F","H","H","H","G","H","J","J","J","I","J","I","G","J","J","J","F","D","H","E","D","J","J","J","J","I","H","I","I","I","G","H","I","H","H","G","I","H","H","J","I","J","H","H","H"],[18018,18531,17329,15223,15223,15984,16193,11668,18701,12587,15964,12300,12545,9823,10453,15354,18559,10577,8040,9925,10761,14220,16037,16538,18242,18242,18242,18242,18242,18593,18710,18710,6512,8044,10863,11548,13203,14918,16970,16970,15030,18788,10424,13156,15415,8807,17164,17184,6870,11594,17801,17146,14341,8419,9665,18686,16239,16239,18495,16314,17407,10437,10628,16914,13784,17209,18756,17027,17209,18369,16465,12500,14749,16195,17116,17924,18485,15231,17186,17753,14351,14775,18766,12095,12687,14421,14717,15394,16353,16353,17339,17996,14659,15148,15993,16709,16934,17103,17591,18254]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>carat<\/th>\n      <th>cut<\/th>\n      <th>color<\/th>\n      <th>price<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5b46ef77fe21a7a5f4cf" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5b46ef77fe21a7a5f4cf">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100"],[5.01,4.5,4.13,4.01,4.01,4,3.67,3.65,3.51,3.5,3.4,3.24,3.22,3.11,3.05,3.04,3.04,3.02,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3.01,3,3,3,3,3,3,3,3,2.8,2.8,2.77,2.75,2.75,2.74,2.74,2.74,2.72,2.72,2.72,2.71,2.7,2.68,2.68,2.67,2.66,2.66,2.66,2.65,2.64,2.63,2.63,2.63,2.61,2.61,2.61,2.6,2.6,2.6,2.59,2.58,2.58,2.58,2.57,2.57,2.57,2.56,2.56,2.56,2.55,2.55,2.55,2.54,2.54,2.54,2.54,2.54,2.54,2.54,2.54,2.54,2.53,2.53,2.53,2.53,2.53,2.53,2.53,2.53],["Fair","Fair","Fair","Premium","Premium","Very Good","Premium","Fair","Premium","Ideal","Fair","Premium","Ideal","Fair","Premium","Very Good","Premium","Fair","Premium","Premium","Fair","Premium","Ideal","Ideal","Premium","Fair","Fair","Good","Good","Good","Premium","Premium","Very Good","Fair","Good","Good","Premium","Good","Premium","Fair","Premium","Good","Premium","Ideal","Premium","Fair","Very Good","Very Good","Fair","Ideal","Ideal","Premium","Very Good","Premium","Very Good","Good","Good","Good","Good","Premium","Ideal","Very Good","Premium","Ideal","Good","Ideal","Ideal","Fair","Premium","Ideal","Ideal","Fair","Very Good","Premium","Premium","Premium","Premium","Good","Premium","Ideal","Premium","Good","Premium","Very Good","Ideal","Ideal","Premium","Very Good","Very Good","Very Good","Ideal","Very Good","Premium","Premium","Ideal","Ideal","Premium","Fair","Premium","Premium"],["J","J","H","I","J","I","I","H","J","H","D","H","I","J","E","I","I","I","I","F","H","G","J","J","I","I","I","I","I","H","J","J","H","H","I","E","G","J","I","I","I","G","H","D","H","J","J","H","J","H","J","E","H","G","I","F","H","H","H","G","H","J","J","J","I","J","I","G","J","J","J","F","D","H","E","D","J","J","J","J","I","H","I","I","I","G","H","I","H","H","G","I","H","H","J","I","J","H","H","H"],[18018,18531,17329,15223,15223,15984,16193,11668,18701,12587,15964,12300,12545,9823,10453,15354,18559,10577,8040,9925,10761,14220,16037,16538,18242,18242,18242,18242,18242,18593,18710,18710,6512,8044,10863,11548,13203,14918,16970,16970,15030,18788,10424,13156,15415,8807,17164,17184,6870,11594,17801,17146,14341,8419,9665,18686,16239,16239,18495,16314,17407,10437,10628,16914,13784,17209,18756,17027,17209,18369,16465,12500,14749,16195,17116,17924,18485,15231,17186,17753,14351,14775,18766,12095,12687,14421,14717,15394,16353,16353,17339,17996,14659,15148,15993,16709,16934,17103,17591,18254]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>carat<\/th>\n      <th>cut<\/th>\n      <th>color<\/th>\n      <th>price<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>flexdashboard에는 사이드바, 탭모음, 값상자, 게이지를 생성하는 간단한 도구가 있음<br />
 더 알아보기: <a href="http://rmarkdown.rstudio.com/flexdashboard" class="uri">http://rmarkdown.rstudio.com/flexdashboard</a></p>
 </div>
@@ -7230,8 +7232,8 @@ leaflet() %&gt;%
   setView(174.764, -36.877, zoom = 16) %&gt;%
   addTiles() %&gt;%
   addMarkers(174.764, -36.877, popup = &quot;Maungawhau&quot;)</code></pre>
-<div id="htmlwidget-34eebb1ccd1bf2e2059d" style="width:480px;height:160px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-34eebb1ccd1bf2e2059d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[-36.877,174.764],16,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[-36.877,174.764,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Maungawhau",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.877,-36.877],"lng":[174.764,174.764]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7ad330371b699d4f128f" style="width:480px;height:160px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7ad330371b699d4f128f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[-36.877,174.764],16,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[-36.877,174.764,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Maungawhau",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.877,-36.877],"lng":[174.764,174.764]}},"evals":[],"jsHooks":[]}</script>
 <p>html 위젯은 HTML이나 자바스크립트를 몰라도 사용할 수 있음</p>
 <ul>
 <li><strong>추가</strong> html 위젯을 제공하는 패키지(중 일부)</li>
@@ -7260,7 +7262,7 @@ runtime: shiny</code></pre>
 <p>install.packages(“shiny”)</p>
 <pre class="r"><code>library(shiny)
 
-textInput(&quot;name&quot;, &quot;이름은 무엇입니까?&quot;) # Rmd에서 실행 시, 한글이 깨질 수 있는데 knit하면 제대로 출력됨</code></pre>
+textInput(&quot;name&quot;, &quot;이름은 무엇입니까?&quot;) # Rmd에서 실행 시, 한글 깨질 수 있는데 knit하면 제대로 출력됨</code></pre>
 <div class="form-group shiny-input-container">
 <label class="control-label" for="name">이름은 무엇입니까?</label>
 <input id="name" type="text" class="form-control" value=""/>
