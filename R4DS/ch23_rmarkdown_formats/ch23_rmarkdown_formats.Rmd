@@ -284,7 +284,7 @@ RStudio가 IDE에 Build 탭을 추가하는데, 이 탭은 사이트를 빌드�
 ## 10. 더 배우기
 다양한 유형으로 효과적인 의사소통 법을 배우고 싶은 경우 참고하면 좋을 자료  
 
-- 프리젠테이션 기술 개선: Neal Ford&Matthew McCollough&Nathaniel Schutta의 *PRESENTATION pATTERNS* 교재(번역서: 프레젠테이션 교과서, 2014, 위키북스)  
+- 프리젠테이션 기술 개선: Neal Ford&Matthew McCollough&Nathaniel Schutta의 *PRESENTATION PATTERNS* 교재(번역서: 프레젠테이션 교과서, 2014, 위키북스)  
 - 학술 발표: [Leek 그룹의 발표 가이드](http://github.com/jtleek/talkguide)   
 - [Matt McGarrity의 대중연설 온라인 수업](https://www.coursera.org/learn/public-speaking)  
 - 대시보드 생성: Stephen Few의 Information Dash-board Design: The Effective Visaul Communication of Data  
