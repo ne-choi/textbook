@@ -1,5 +1,5 @@
 ---
-title: "23. Practice_R Markdown formats"
+title: "23. Practice1_R Markdown formats"
 author: "ne_choi"
 date: '2020 10 13 '
 output:
