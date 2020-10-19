@@ -35,3 +35,11 @@
 22. Graphics for communication
 23. R markdown formats
 24. R markdown workflow
+
+</br>
+  
+2nd textbook: Discovering Statistics Using R  
+
+05. Exploring assumptions
+06. Correlation
+07. Regression
