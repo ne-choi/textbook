@@ -1,11 +1,15 @@
 ---
-title: "ch05_exploring_assumptions"
-author:
-date: "10/19/2020"
+title: "05. Exploting Assumptions (5.7)"
+author: "ne_choi"
+date: '2020 10 17 '
 output:
   html_document:
-    toc: true
-    toc_float: true
+   toc: true
+   toc_float:
+     collapsed: true
+     smooth_scroll: true
+   theme: united
+   highlight: textmate
 ---
 
 ```{r setup, include=FALSE}
@@ -58,11 +62,11 @@ Levene의 검정은 다른 그룹의 분산이 같다는 귀무 가설을 검정
 R에서 직접 레빈 검정을 실행 할때는 car 패키지의 leveneTest() 함수를 사용한다.
 
 
-```{r data , include=FALSE}
+```
 rexam <- read.delim("rexam.dat", header=TRUE)
 ```
 
-```{r test 1, eval=FALSE}
+```
   leveneTest (결과변수, 그룹화 변수,  center = median/mean)
 ```
 
@@ -71,7 +75,7 @@ rexam <- read.delim("rexam.dat", header=TRUE)
 변수들만 지정해서 함수는 중앙값을 중심으로 변수들을 처리한다.
 만약 중앙값 대신 평균을 사용하고 싶으면 **center="mean"** 추가하면 된다
 
-```{r test 2, eval=FALSE}
+```
   leveneTest(rexam $ exam, rexam $ uni)
 
   leveneTest(rexam $ exam, rexam $ uni, center = mean)
@@ -79,7 +83,7 @@ rexam <- read.delim("rexam.dat", header=TRUE)
 
 수치계산력 점수를 검정하고 싶다면 다음과 같이 실행하면 된다.(결과변수만 바뀜)
 
-```{r test 3, eval=FALSE}
+```
  leveneTest(rexam $ numeracy, rexam $ uni)
 ```
 
@@ -91,7 +95,7 @@ rexam <- read.delim("rexam.dat", header=TRUE)
 
 **출력5.8**
 
-```{r test 4 , include=FALSE}
+```
 library(car)
 library(pastecs)
 library(psych)
@@ -100,15 +104,15 @@ library(Rcmdr)
 library(foreign)
 ```
 
-```{r test 5, warning=FALSE}
+```
 leveneTest(rexam$exam, rexam$uni)
 ```
 
-```{r test 6, warning=FALSE}
+```
 leveneTest(rexam$exam, rexam$uni, center = mean)
 ```
 
-```{r test 7, warning=FALSE}
+```
 leveneTest(rexam$numeracy, rexam$uni)
 ```
 
@@ -192,48 +196,5 @@ __그림 5.8 하틀리의  Fmax 검정에 쓰이는 몇가지 임계치들__
 
 
 
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
  
  
