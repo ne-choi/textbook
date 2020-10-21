@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       warning = FALSE, message = FALSE)
 ```
 
-# 제 6장 상관
+Chapter 06. 상관
 
 ## 6.1 이번장에서 배우는 내용
 - 양의 상관 
