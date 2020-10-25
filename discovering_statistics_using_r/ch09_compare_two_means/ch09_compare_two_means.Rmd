@@ -79,11 +79,6 @@ spiderWide$picture_adj <- spiderWide$picture + spiderWide$adj
  3. 두 그룹 평균이 다른지 검사 할 때 사용  
  
 *예시*
-
- ![](img\kimbs.jpg)
- 
- [출처 : 네이버블로그,담스토리]
- 
  
 * **독립 t 검정** : 이 검정은 실험 조건이 둘이고 각 조건에 서로 다른 참가자들을 배정한 실험에 쓰인다.
 ( = 독립평균t검정, 독립측도t검정, 독립표본t검정 이라고 부르기도 한다.)

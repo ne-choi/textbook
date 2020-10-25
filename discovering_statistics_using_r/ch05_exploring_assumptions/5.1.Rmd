@@ -59,8 +59,3 @@ library(ggplot2)
 library(pastecs)
 library(psych)
 ```
-
-
-
-
-
