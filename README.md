@@ -2,13 +2,13 @@
 ## Ⅰ. R
 ### 1st: R for Data Science (R4DS)
 
-**- Explore**
-01. Data visualisation
-02. Workflow: basics
-03. Data transformation
-04. Workflow: scripts
-05. Exploratory data analysis
-06. Workflow: projects
+**- Explore**  
+01. Data visualisation  
+02. Workflow: basics  
+03. Data transformation  
+04. Workflow: scripts  
+05. Exploratory data analysis  
+06. Workflow: projects  
 
 **- Wrangle**  
 07. Tibbles  
