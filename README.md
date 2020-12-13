@@ -37,7 +37,6 @@
 24. R markdown workflow  
 
 </br>
-  
 ### 2nd: Discovering Statistics Using R  
 
 05. Exploring assumptions  
@@ -64,7 +63,6 @@
 13. Gotchas  
 
 </br>
-
 ### 4th: Python Machine Learning Guide
 
 01. 파이썬 기반의 머신러닝과 생태계 이해  
