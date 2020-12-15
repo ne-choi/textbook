@@ -71,3 +71,8 @@
 04. 분류  
 05. 회귀  
 06. 차원 축소  
+
+</br>
+### 5th: Python Algorithm Interview  
+
+06. 문자열 조작
