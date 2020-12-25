@@ -63,6 +63,7 @@
 13. Gotchas  
 
 </br>
+
 ### 4th: Python Machine Learning Guide
 
 01. 파이썬 기반의 머신러닝과 생태계 이해  
@@ -71,3 +72,13 @@
 04. 분류  
 05. 회귀  
 06. 차원 축소  
+
+</br>
+
+### 5th: Natural Language Processing
+
+02. 자연어 처리 개발 준비
+03. 자연어 처리 개요
+04. 텍스트 분류
+05. 텍스트 유사도
+07. 사전 학습 모델
