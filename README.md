@@ -37,6 +37,7 @@
 24. R markdown workflow  
 
 </br>
+
 ### 2nd: Discovering Statistics Using R  
 
 05. Exploring assumptions  
