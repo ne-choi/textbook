@@ -22,7 +22,7 @@ output:
 ---
 
 # **Pandas 10분 완성(10 Minutes to Pandas) 필사**
-- 본 자료의 저작권은 [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)이며, [데잇걸즈2가 번역한 Pandas 10분 완성](https://dataitgirls2.github.io/10minutes2pandas/)을 필사한 자료임.  
+- 본 자료의 저작권은 [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)에 있으며, [데잇걸즈2가 번역한 Pandas 10분 완성](https://dataitgirls2.github.io/10minutes2pandas/)을 필사한 자료입니다.  
 
 **목차**
 1. Object Creation (객체 생성)  
